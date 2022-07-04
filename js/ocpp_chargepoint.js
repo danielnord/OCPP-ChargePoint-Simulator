@@ -7,29 +7,7 @@ import * as ocpp from './ocpp_constants.js'
 //
 //
 function formatDate(date) {
-    var day = String(date.getDate()),
-        monthIndex = String(date.getMonth() + 1),
-        year = date.getFullYear(),
-        h = date.getHours(),
-        m = String(date.getMinutes()),
-        s = String(date.getSeconds());
-
-    if (day.length < 2) {
-        day = ('0' + day.slice(-2));
-    }
-    if (monthIndex.length < 2) {
-        monthIndex = ('0' + monthIndex.slice(-2));
-    }
-    if (h.length < 2) {
-        h = ('0' + h.slice(-2));
-    }
-    if (m.length < 2) {
-        m = ('0' + m.slice(-2));
-    }
-    if (s.length < 2) {
-        s = ('0' + s.slice(-2));
-    }
-    return year + '-' + monthIndex + '-' + day + 'T' + h + ':' + m + ':' + s + 'Z';
+    return date.toISOString();
 }
 
 function generateId() {
